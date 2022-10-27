@@ -40,10 +40,12 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(orijinalTatlar){
+  var kopya=orijinalTatlar.map(function(s){
+    return s*1} );
+  console.log(orijinalTatlar.map(function(s){return s;}));
 }
-
+kopyala(orijinalTatlar);
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -56,9 +58,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(){
+  var sayi=orijinalTatlar.length;
+  if(sayi==25) {return true;}
+
+  else {return false;}
+
 }
+console.log(dizi25Cesitmi());
 
 
 /* Görev 3:
@@ -74,10 +81,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(orijinalTatlar, string){
+  let yeniCesitler=orijinalTatlar.slice();
+  yeniCesitler.unshift(string);
+  return yeniCesitler;
 }
-
+console.log(cesitEkle(orijinalTatlar, "Kakule"));
 
 /* Cörev 4:
 
@@ -92,9 +101,14 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(orijinalTatlar){
+  var kopya=orijinalTatlar.map(function(s){
+    return s*1} );
+    kopya.pop();
+
 }
+console.log(sonCesitiKaldir(orijinalTatlar));
+
 
 
 /* Görev 5:
@@ -108,8 +122,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(){
+  
 }
 
 
@@ -128,8 +142,11 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(/*tatlar,lezzet*/){
+  //dizi=kopyala(orijinalTatlar);
+  //lezzet=orijinalTatlar.slice()
+
+  
 }
 
 
@@ -154,10 +171,20 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(orijinalTatlar, aranacakAroma){
+  var cikolata=[];
+  var kucukOrijinalTatlar;
+  var kucukAroma;
+  for (let i=0; i<orijinalTatlar.length; i++){
+    kucukOrijinalTatlar=orijinalTatlar[i].toLowerCase();
+    kucukAroma=aranacakAroma.toLowerCase();
+    if(kucukOrijinalTatlar.includes(kucukAroma)){
+      cikolata.push(orijinalTatlar[i]);
+    }
+  }
+  return cikolata;
 }
-
+console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
 
 
 /* ALIŞTIRMA */
