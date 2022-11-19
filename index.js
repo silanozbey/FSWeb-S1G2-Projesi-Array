@@ -41,9 +41,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 
 
 function kopyala(orijinalTatlar){
-  var kopya=orijinalTatlar.map(function(s){
-    return s*1} );
-  console.log(orijinalTatlar.map(function(s){return s;}));
+  var kopya=orijinalTatlar.slice();
+  
+  return kopya;
 }
 kopyala(orijinalTatlar);
 
@@ -58,14 +58,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(){
-  var sayi=orijinalTatlar.length;
+function dizi25Cesitmi(a){
+  var sayi=a.length;
   if(sayi==25) {return true;}
 
   else {return false;}
 
 }
-console.log(dizi25Cesitmi());
+console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -80,13 +80,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
   Örneğin: cesitEkle(orijinalTatlar, "Kakule") işlevi doğru çalıştığında ["Kakule", "Muz",..."Vanilya"] şeklinde dönmelidir
 */
 
-
-function cesitEkle(orijinalTatlar, string){
-  let yeniCesitler=orijinalTatlar.slice();
-  yeniCesitler.unshift(string);
-  return yeniCesitler;
+var yenitat='kakule';
+function cesitEkle(orijinalTatlar, yenitat){
+orijinalTatlar.unshift(yenitat);
+return orijinalTatlar;
 }
-console.log(cesitEkle(orijinalTatlar, "Kakule"));
+console.log(cesitEkle(orijinalTatlar, yenitat));
 
 /* Cörev 4:
 
@@ -102,10 +101,8 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 
 
 function sonCesitiKaldir(orijinalTatlar){
-  var kopya=orijinalTatlar.map(function(s){
-    return s*1} );
-    kopya.pop();
-
+  orijinalTatlar.pop();
+  return orijinalTatlar;
 }
 console.log(sonCesitiKaldir(orijinalTatlar));
 
@@ -122,9 +119,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(){
-  
+function indekstekiCesitiGetir(orijinalTatlar, sayi){
+  orijinalTatlar[sayi];
+  return orijinalTatlar[sayi];
 }
+console.log(indekstekiCesitiGetir(orijinalTatlar,2));
 
 
 /* Görev 6:
@@ -142,13 +141,14 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*tatlar,lezzet*/){
+function ismeGoreCesitCikar(orijinalTatlar,lezzet){
   //dizi=kopyala(orijinalTatlar);
-  //lezzet=orijinalTatlar.slice()
-
-  
+  //lezzet=orijinalTatlar.slice();
+ let indexa= orijinalTatlar.indexOf(lezzet);
+ orijinalTatlar.splice(indexa,1);
+ return orijinalTatlar;
 }
-
+console.log(ismeGoreCesitCikar(orijinalTatlar));
 
 /* Görev 7:
 
